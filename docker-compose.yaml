@@ -9,7 +9,7 @@ services:
     #   POSTGRES_DB: movie_web_backend
     #   POSTGRES_PASSWORD: YourPasswordHere
     ports:
-      - "5432:5432" 
+      - "5412:5432" 
     networks:
       - movieweb-backend-network
     environment:
