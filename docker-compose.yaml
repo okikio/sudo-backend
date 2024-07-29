@@ -2,20 +2,27 @@ version: "3.8"
 
 services:
 
-
-  movieweb-db:
+  db:
     image: postgres
     ports:
       - "5412:5432" 
+    networks:
+      - movieweb-backend-network
     env_file:
       - stack.env
 
-  movieweb-backend:
+  backend:
     build:
       context: .
     ports:
       - "3432:80"
     depends_on:
-      - movieweb-db
+      - db
+    networks:
+      - movieweb-backend-network
     env_file:
       - stack.env
+
+networks:
+  movieweb-backend-network: 
+    driver: bridge
