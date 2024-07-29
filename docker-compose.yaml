@@ -4,16 +4,14 @@ services:
 
   db:
     image: postgres
-    # environment:
-    #   POSTGRES_USER: movie_web_user
-    #   POSTGRES_DB: movie_web_backend
-    #   POSTGRES_PASSWORD: YourPasswordHere
+    environment:
+      POSTGRES_USER: movie_web_user
+      POSTGRES_DB: movie_web_backend
+      POSTGRES_PASSWORD: YourPasswordHere
     ports:
       - "5412:5432" 
     networks:
       - movieweb-backend-network
-    environment:
-      POSTGRES_PASSWORD: example
 
   backend:
     build:
