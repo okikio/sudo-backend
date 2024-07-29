@@ -16,8 +16,8 @@ services:
       context: .
     ports:
       - "3432:80"
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     networks:
       - movieweb-backend-network
     env_file:
