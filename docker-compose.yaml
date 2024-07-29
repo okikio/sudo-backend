@@ -18,7 +18,7 @@ services:
     networks:
       - movieweb-backend-network
     env_file:
-      - .env
+      - stack.env
 
 
   movieweb-db:
@@ -32,7 +32,7 @@ services:
     networks:
       - movieweb-backend-network
     env_file:
-      - .env
+      - stack.env
 
 networks:
   movieweb-backend-network: 
