@@ -12,8 +12,6 @@ services:
       - "5412:5432" 
     networks:
       - movieweb-backend-network
-    env_file:
-      - stack.env
 
   backend:
     build:
