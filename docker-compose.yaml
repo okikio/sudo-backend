@@ -6,8 +6,8 @@ services:
     image: postgres
     ports:
       - "5412:5432" 
-    # networks:
-    #   - movieweb-backend-network
+    networks:
+      - movieweb-backend-network
     env_file:
       - stack.env
 
@@ -18,11 +18,11 @@ services:
       - "3432:80"
     # depends_on:
     #   - db
-    # networks:
-    #   - movieweb-backend-network
+    networks:
+      - movieweb-backend-network
     env_file:
       - stack.env
 
-# networks:
-#   movieweb-backend-network: 
-#     driver: bridge
+networks:
+  movieweb-backend-network: 
+    driver: bridge
