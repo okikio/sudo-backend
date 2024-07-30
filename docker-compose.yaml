@@ -24,7 +24,8 @@ services:
     ports:
       - "3432:80"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - movieweb-backend-network
     env_file:
