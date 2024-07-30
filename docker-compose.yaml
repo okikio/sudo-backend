@@ -13,7 +13,7 @@ services:
     networks:
       - movieweb-backend-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U movie_web_user"]
+      test: ["CMD-SHELL", "pg_isready -U movie_web_user -d movie_web_backend"]
       interval: 10s
       timeout: 5s
       retries: 5
